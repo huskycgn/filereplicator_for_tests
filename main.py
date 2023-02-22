@@ -1,5 +1,5 @@
 from ftplib import FTP
-from cred import *
+from credentials import *
 
 # Script for streestest
 
