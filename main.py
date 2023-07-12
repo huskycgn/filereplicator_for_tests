@@ -14,14 +14,18 @@ counter = 0
 # Testfile must exist!
 
 try:
-    with open(file='./testfile', mode='rb') as file:
-        for i in range(10):
-            filename = f'testfile{i+1}'
-            ftp_conn.storbinary(cmd=f'STOR /anypath/{filename}', fp=file)
+    with open(file=f'./{srcfilename}', mode='rb') as file:
+        for i in range(400):
+            filename = f'{srcfilename}'
+            filename_name = filename.split('.')[0]
+            filename_suffix = filename.split('.')[1]
+            new_filename = filename_name + f'_{i+1}' + '.' + filename_suffix
+            filename = new_filename
+            ftp_conn.storbinary(cmd=f'STOR {destpath}{filename}', fp=file)
             print(f'wrote file: {filename}')
             counter += 1
             file.seek(0)  # Reset the file pointer to the beginning of the file
-
+#
 except FileNotFoundError:
     print('File does not exist!')
 

@@ -1,3 +1,5 @@
-host = 'your.ftp.com'
-user = 'your_username'
-password = 'yourpass'
+host = '192.168.178.22'
+user = 'testuser'
+password = 'EnE?9LM&FEwFn&fH'
+destpath = '/home/'
+srcfilename = 'testfile.txt'
