@@ -19,6 +19,7 @@ try:
             filename = f'{srcfilename}'
             filename_name = filename.split('.')[0]
             filename_suffix = filename.split('.')[1]
+            # sequence number is squeezed between filename and extension
             new_filename = filename_name + f'_{i+1}' + '.' + filename_suffix
             filename = new_filename
             ftp_conn.storbinary(cmd=f'STOR {destpath}{filename}', fp=file)
